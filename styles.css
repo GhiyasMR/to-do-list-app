@@ -6,11 +6,19 @@
 
 body {
   margin: 20px;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+}
+
+body:has(dialog[open]) {
+  filter: blur(10px);
 }
 
 main {
-  margin: 0 auto;
-  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  width: 500px;
   border: 2px solid black;
   border-radius: 15px;
 }
@@ -19,18 +27,32 @@ h1 {
   text-align: center;
 }
 
-.quadrant {
+.quadrant, #add-task {
   border: 1px solid blue;
   border-radius: 10px;
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px 5px;
 }
 
-label {
-  display: block;
-  margin-left: 20px;
+#add-task #close-add-task {
+  position: relative;
 }
 
-input {
-  margin-right: 10px;
+#add-task #add-task-button {
+  position: relative;
+  left: 380px;
+}
+
+form {
+  margin: 30px auto;
+  width: 250px;
+}
+
+form label {
+  display: block;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
 }
