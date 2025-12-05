@@ -29,18 +29,17 @@ function addTask() {
 
     if (urgencyCheckbox.checked && importanceCheckbox.checked) {
         quadrant1Task.push(titleInput.value);
+        localStorage.setItem("quadrant1", JSON.stringify(quadrant1Task));
     } else if (importanceCheckbox.checked) {
         quadrant2Task.push(titleInput.value);
+        localStorage.setItem("quadrant2", JSON.stringify(quadrant2Task));
     } else if (urgencyCheckbox.checked) {
         quadrant3Task.push(titleInput.value);
+        localStorage.setItem("quadrant3", JSON.stringify(quadrant3Task));
     } else {
         quadrant4Task.push(titleInput.value);
+        localStorage.setItem("quadrant4", JSON.stringify(quadrant4Task));
     }
-
-    localStorage.setItem("quadrant1", JSON.stringify(quadrant1Task));
-    localStorage.setItem("quadrant2", JSON.stringify(quadrant2Task));
-    localStorage.setItem("quadrant3", JSON.stringify(quadrant3Task));
-    localStorage.setItem("quadrant4", JSON.stringify(quadrant4Task));
 
     titleInput.value = "";
     urgencyCheckbox.checked = false;
