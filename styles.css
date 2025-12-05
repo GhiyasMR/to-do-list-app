@@ -26,11 +26,15 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  margin-bottom: 10px;
+}
+
 .quadrant,
 #add-task {
   border-radius: 10px;
   margin: 10px 0;
-  padding: 10px 5px;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -50,10 +54,11 @@ h1 {
   background-color: #FFFBFE;
 }
 
-.task {
+.task,
+p {
   border-bottom: 1px solid #011627;
-  width: calc(100% - 30px);
-  margin: 2.5px 15px;
+  width: 95%;
+  margin: 2.5px auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -61,11 +66,14 @@ h1 {
   word-wrap: break-word;
 }
 
-input[type="checkbox"], label {
+input[type="checkbox"],
+label {
   cursor: pointer;
 }
 
-#show-add-task, #close-add-task, #add-task-button {
+#show-add-task,
+#close-add-task,
+#add-task-button {
   background-color: #011627;
   border-radius: 8px;
   border-style: none;
@@ -92,8 +100,12 @@ input[type="checkbox"], label {
   touch-action: manipulation;
 }
 
-#show-add-task:hover, #close-add-task:hover, #add-task-button:hover,
-#show-add-task:hover, #close-add-task:hover, #add-task-button:focus {
+#show-add-task:hover,
+#close-add-task:hover,
+#add-task-button:hover,
+#show-add-task:hover,
+#close-add-task:hover,
+#add-task-button:focus {
   background-color: #616161;
 }
 
@@ -143,4 +155,8 @@ form label {
 
 .delete-button:active {
   color: grey;
+}
+
+input[type=checkbox]:checked+label {
+  text-decoration: line-through;
 }
