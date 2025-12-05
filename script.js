@@ -50,10 +50,12 @@ function addTask() {
 function changeUI() {
     // TODO: Refactor later, i guess
     if (!quadrant1Task.length) {
-        quadrant1.innerHTML += "<p>No task right now</p>";
+        quadrant1.innerHTML = `
+            <h2>DO IT</h2>
+            <p>No task right now</p>
+        `;
     } else {
         let htmlElement1 = "<h2>DO IT</h2>";
-
         quadrant1Task.forEach((task) => {
             htmlElement1 += `
             <label><input type="checkbox" class="tasks"> ${task}</label><br>
@@ -63,7 +65,10 @@ function changeUI() {
     }
 
     if (!quadrant2Task.length) {
-        quadrant2.innerHTML += "<p>No task right now</p>";
+        quadrant2.innerHTML = `
+            <h2>SCHEDULE IT</h2>
+            <p>No task right now</p>
+        `;
     } else {
         let htmlElement2 = "<h2>SCHEDULE IT</h2>";
         quadrant2Task.forEach((task) => {
@@ -75,7 +80,10 @@ function changeUI() {
     }
 
     if (!quadrant3Task.length) {
-        quadrant3.innerHTML += "<p>No task right now</p>";
+        quadrant3.innerHTML = `
+            <h2>QUICK TASK</h2>
+            <p>No task right now</p>
+        `;
     } else {
         let htmlElement3 = "<h2>QUICK TASK</h2>";
         quadrant3Task.forEach((task) => {
@@ -87,7 +95,10 @@ function changeUI() {
     }
 
     if (!quadrant4Task.length) {
-        quadrant4.innerHTML += "<p>No task right now</p>";
+        quadrant4.innerHTML = `
+            <h2>MAYBE LATER</h2>
+            <p>No task right now</p>
+        `;
     } else {
         let htmlElement4 = "<h2>MAYBE LATER</h2>";
         quadrant4Task.forEach((task) => {
