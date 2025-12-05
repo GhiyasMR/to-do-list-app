@@ -85,6 +85,7 @@ function changeQuadrant1UI() {
                 <div class="task">
                     <input type="checkbox" id="${task.id}"/>
                     <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `
         })
@@ -103,6 +104,7 @@ function changeQuadrant2UI() {
                 <div class="task">
                     <input type="checkbox" id="${task.id}"/>
                     <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `
         })
@@ -120,6 +122,7 @@ function changeQuadrant3UI() {
                 <div class="task">
                     <input type="checkbox" id="${task.id}"/>
                     <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `
         })
@@ -137,6 +140,7 @@ function changeQuadrant4UI() {
                 <div class="task">
                     <input type="checkbox" id="${task.id}"/>
                     <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `
         })

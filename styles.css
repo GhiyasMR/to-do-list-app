@@ -65,7 +65,7 @@ input[type="checkbox"], label {
   cursor: pointer;
 }
 
-button {
+#show-add-task, #close-add-task, #add-task-button {
   background-color: #011627;
   border-radius: 8px;
   border-style: none;
@@ -92,8 +92,8 @@ button {
   touch-action: manipulation;
 }
 
-button:hover,
-button:focus {
+#show-add-task:hover, #close-add-task:hover, #add-task-button:hover,
+#show-add-task:hover, #close-add-task:hover, #add-task-button:focus {
   background-color: #616161;
 }
 
@@ -124,4 +124,23 @@ form label {
 
 .hidden {
   display: none;
+}
+
+.delete-button {
+  float: right;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  padding: 0;
+  color: black;
+  background-color: transparent;
+  border: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.delete-button:active {
+  color: grey;
 }
