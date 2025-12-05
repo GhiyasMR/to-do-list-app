@@ -50,10 +50,8 @@ h1 {
   background-color: #FFFBFE;
 }
 
-#task-list label,
-p {
+.task {
   border-bottom: 1px solid #011627;
-  display: inline-block;
   width: calc(100% - 30px);
   margin: 2.5px 15px;
   -webkit-user-select: none;
@@ -63,8 +61,7 @@ p {
   word-wrap: break-word;
 }
 
-.checkbox-label,
-input[type="checkbox"] {
+input[type="checkbox"], label {
   cursor: pointer;
 }
 
