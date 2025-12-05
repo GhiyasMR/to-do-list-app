@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 body {
@@ -15,8 +16,9 @@ main {
   margin: auto;
   padding: 20px;
   width: 500px;
-  border: 2px solid black;
   border-radius: 15px;
+  background-color: #C7EDE4;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -25,10 +27,73 @@ h1 {
 
 .quadrant,
 #add-task {
-  border: 1px solid blue;
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#q1 {
+  background-color: #C33C54;
+}
+
+#q2 {
+  background-color: #6184D8;
+}
+
+#q3 {
+  background-color: #FFBA49;
+}
+
+#q4 {
+  background-color: #FFFBFE;
+}
+
+#task-list label, p {
+  border-bottom: 1px solid black;
+  display: inline-block;
+  width: calc(100% - 30px);
+  margin: 2.5px 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-label, input[type="checkbox"] {
+  cursor: pointer;
+}
+
+button {
+  background-color: #011627;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover,
+button:focus {
+  background-color: #616161;
 }
 
 #show-add-task {
@@ -41,8 +106,9 @@ h1 {
 }
 
 #add-task-button {
-  float: right;
-  margin-top: -15px;
+  position: relative;
+  left: 360px;
+  top: 4px;
 }
 
 form {
