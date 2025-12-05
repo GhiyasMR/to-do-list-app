@@ -57,7 +57,10 @@ function changeUI() {
         let htmlElement1 = "<h2>DO IT</h2>";
         quadrant1Task.forEach((task) => {
             htmlElement1 += `
-            <label class="checkbox-label"><input type="checkbox" class="tasks"> ${task}</label><br>
+            <label class="strikethrough">
+                <input type="checkbox"/> ${task}
+            </label>
+            <br>
         `;
         });
         quadrant1.innerHTML = htmlElement1.trim();
@@ -72,7 +75,10 @@ function changeUI() {
         let htmlElement2 = "<h2>SCHEDULE IT</h2>";
         quadrant2Task.forEach((task) => {
             htmlElement2 += `
-            <label class="checkbox-label"><input type="checkbox" class="tasks"> ${task}</label><br>
+            <label class="checkbox-label">
+                <input type="checkbox" class="tasks"> <span class="task-text">${task}</span>
+            </label>
+            <br>
         `;
         });
         quadrant2.innerHTML = htmlElement2.trim();
@@ -87,7 +93,10 @@ function changeUI() {
         let htmlElement3 = "<h2>QUICK TASK</h2>";
         quadrant3Task.forEach((task) => {
             htmlElement3 += `
-            <label class="checkbox-label"><input type="checkbox" class="tasks"> ${task}</label><br>
+            <label class="checkbox-label">
+                <input type="checkbox" class="tasks"> <span class="task-text">${task}</span>
+            </label>
+            <br>
         `;
         });
         quadrant3.innerHTML = htmlElement3.trim();
@@ -102,7 +111,10 @@ function changeUI() {
         let htmlElement4 = "<h2>MAYBE LATER</h2>";
         quadrant4Task.forEach((task) => {
             htmlElement4 += `
-            <label class="checkbox-label"><input type="checkbox" class="tasks"> ${task}</label><br>
+            <label class="checkbox-label">
+                <input type="checkbox" class="tasks"> <span class="task-text">${task}</span>
+            </label>
+            <br>
         `;
         });
         quadrant4.innerHTML = htmlElement4.trim();
@@ -110,7 +122,6 @@ function changeUI() {
 }
 
 addTaskButton.addEventListener("click", addTask);
-
 showAddTask.addEventListener("click", showOrCloseModal);
 closeAddTask.addEventListener("click", () => {
     showOrCloseModal();
