@@ -23,20 +23,26 @@ h1 {
   text-align: center;
 }
 
-.quadrant, #add-task {
+.quadrant,
+#add-task {
   border: 1px solid blue;
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px 5px;
 }
 
-#add-task #close-add-task {
-  position: relative;
+#show-add-task {
+  float: right;
 }
 
-#add-task #add-task-button {
+#add-task #close-add-task {
   position: relative;
-  left: 380px;
+  top: -5px;
+}
+
+#add-task-button {
+  float: right;
+  margin-top: -15px;
 }
 
 form {
