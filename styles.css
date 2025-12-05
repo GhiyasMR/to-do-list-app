@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 body {
@@ -10,6 +10,7 @@ body {
   height: 95vh;
   display: flex;
   align-items: center;
+  color: #011627;
 }
 
 main {
@@ -18,7 +19,7 @@ main {
   width: 500px;
   border-radius: 15px;
   background-color: #C7EDE4;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -30,7 +31,7 @@ h1 {
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #q1 {
@@ -49,8 +50,9 @@ h1 {
   background-color: #FFFBFE;
 }
 
-#task-list label, p {
-  border-bottom: 1px solid black;
+#task-list label,
+p {
+  border-bottom: 1px solid #011627;
   display: inline-block;
   width: calc(100% - 30px);
   margin: 2.5px 15px;
@@ -60,7 +62,8 @@ h1 {
   user-select: none;
 }
 
-.checkbox-label, input[type="checkbox"] {
+.checkbox-label,
+input[type="checkbox"] {
   cursor: pointer;
 }
 
