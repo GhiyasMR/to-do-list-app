@@ -11,10 +11,6 @@ body {
   align-items: center;
 }
 
-body:has(dialog[open]) {
-  filter: blur(10px);
-}
-
 main {
   margin: auto;
   padding: 20px;

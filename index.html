@@ -11,40 +11,28 @@
 <body>
   <main>
     <h1>TO-DO LIST APP</h1>
-    <div id="task-list" class="hidden">
+    <div id="task-list" class="">
       <div id="q1" class="quadrant">
         <h2>DO IT</h2>
-        <label>
-          <input type="checkbox"> Placeholder
-        </label>
       </div>
       <div id="q2" class="quadrant">
         <h2>SCHEDULE IT</h2>
-        <label>
-          <input type="checkbox"> Placeholder
-        </label>
       </div>
       <div id="q3" class="quadrant">
         <h2>QUICK TASK</h2>
-        <label>
-          <input type="checkbox"> Placeholder
-        </label>
       </div>
       <div id="q4" class="quadrant">
         <h2>MAYBE LATER</h2>
-        <label>
-          <input type="checkbox"> Placeholder
-        </label>
       </div>
       <button id="show-add-task">Add Task</button>
     </div>
 
-    <div id="add-task">
+    <div id="add-task" class="hidden">
       <button id="close-add-task">Close</button>
       <form>
         <label for="title">Title: <input type="text" name="title" id="title"></label>
         <label for="urgency"><input type="checkbox" name="urgency" id="urgency"> Urgent</label>
-        <label for="urgency"><input type="checkbox" name="importance" id="importance"> Important</label>
+        <label for="importance"><input type="checkbox" name="importance" id="importance"> Important</label>
       </form>
       <button id="add-task-button">Add Task</button>
     </div>
