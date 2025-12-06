@@ -74,81 +74,110 @@ function addTask() {
     importanceCheckbox.checked = false;
 }
 
-function changeQuadrant1UI() {
+function changeQuadrant1UI(quadrant) {
     let htmlElement = "<h2>DO IT</h2>";
 
-    if (!quadrant1Task.length) {
-        htmlElement += "No task right now";
+    if (!quadrant.length) {
+        htmlElement += "<p>No task right now</p>";
     } else {
-        quadrant1Task.forEach(task => {
+        quadrant.forEach((task) => {
             htmlElement += `
-                <div class="task">
-                    <input type="checkbox" id="${task.id}"/>
-                    <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                <div class="task" id="task-${task.id}">
+                    <input type="checkbox" id="task-check-${task.id}"/>
+                    <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
                 </div>
-            `
-        })
+            `;
+        });
     }
     quadrant1.innerHTML = htmlElement;
 }
 
-function changeQuadrant2UI() {
+function changeQuadrant2UI(quadrant) {
     let htmlElement = "<h2>SCHEDULE IT</h2>";
 
-    if (!quadrant2Task.length) {
-        htmlElement += "No task right now";
+    if (!quadrant.length) {
+        htmlElement += "<p>No task right now</p>";
     } else {
-        quadrant2Task.forEach(task => {
+        quadrant.forEach((task) => {
             htmlElement += `
-                <div class="task">
-                    <input type="checkbox" id="${task.id}"/>
-                    <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                <div class="task" id="task-${task.id}">
+                    <input type="checkbox" id="task-check-${task.id}"/>
+                    <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
                 </div>
-            `
-        })
+            `;
+        });
     }
     quadrant2.innerHTML = htmlElement;
 }
-function changeQuadrant3UI() {
+
+function changeQuadrant3UI(quadrant) {
     let htmlElement = "<h2>QUICK TASK</h2>";
 
-    if (!quadrant3Task.length) {
-        htmlElement += "No task right now";
+    if (!quadrant.length) {
+        htmlElement += "<p>No task right now</p>";
     } else {
-        quadrant3Task.forEach(task => {
+        quadrant.forEach((task) => {
             htmlElement += `
-                <div class="task">
-                    <input type="checkbox" id="${task.id}"/>
-                    <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                <div class="task" id="task-${task.id}">
+                    <input type="checkbox" id="task-check-${task.id}"/>
+                    <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
                 </div>
-            `
-        })
+            `;
+        });
     }
     quadrant3.innerHTML = htmlElement;
 }
-function changeQuadrant4UI() {
+
+function changeQuadrant4UI(quadrant) {
     let htmlElement = "<h2>MAYBE LATER</h2>";
 
-    if (!quadrant4Task.length) {
-        htmlElement += "No task right now";
+    if (!quadrant.length) {
+        htmlElement += "<p>No task right now</p>";
     } else {
-        quadrant4Task.forEach(task => {
+        quadrant.forEach((task) => {
             htmlElement += `
-                <div class="task">
-                    <input type="checkbox" id="${task.id}"/>
-                    <label for="${task.id}" class="strikethrough"> ${task.title}</label>
+                <div class="task" id="task-${task.id}">
+                    <input type="checkbox" id="task-check-${task.id}"/>
+                    <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
                 </div>
-            `
-        })
+            `;
+        });
     }
     quadrant4.innerHTML = htmlElement;
 }
 
-function changeUI () {
-    changeQuadrant1UI();
-    changeQuadrant2UI();
-    changeQuadrant3UI();
-    changeQuadrant4UI();
+function changeUI() {
+    changeQuadrant1UI(quadrant1Task);
+    changeQuadrant2UI(quadrant2Task);
+    changeQuadrant3UI(quadrant3Task);
+    changeQuadrant4UI(quadrant4Task);
+}
+
+function deleteTask() {
+    const deleteButtons = document.querySelectorAll(".delete-button");
+
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const id = e.currentTarget.dataset.taskId;
+            const quadrant = e.target.closest(".quadrant");
+            const taskDiv = e.currentTarget.closest(".task");
+
+            if (quadrant.id === "q1") {
+            } else if (quadrant.id === "q2") {
+                console.log("quadrant 2")
+            } else if (quadrant.id === "q3") {
+                console.log("quadrant 3")
+            } else if (quadrant.id === "q4") {
+                console.log("quadrant 4")
+            }
+
+            taskDiv.remove()
+        })
+    })
 }
 
 addTaskButton.addEventListener("click", addTask);
@@ -158,4 +187,7 @@ closeAddTask.addEventListener("click", () => {
     changeUI();
 });
 
-document.addEventListener("DOMContentLoaded", changeUI);
+document.addEventListener("DOMContentLoaded", () => {
+    changeUI();
+    deleteTask();
+});
