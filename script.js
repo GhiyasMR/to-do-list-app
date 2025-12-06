@@ -79,6 +79,7 @@ function changeQuadrant1UI(quadrant) {
 
     if (!quadrant.length) {
         htmlElement += "<p>No task right now</p>";
+        localStorage.removeItem("quadrant1");
     } else {
         quadrant.forEach((task) => {
             htmlElement += `
@@ -98,6 +99,7 @@ function changeQuadrant2UI(quadrant) {
 
     if (!quadrant.length) {
         htmlElement += "<p>No task right now</p>";
+        localStorage.removeItem("quadrant2");
     } else {
         quadrant.forEach((task) => {
             htmlElement += `
@@ -117,6 +119,7 @@ function changeQuadrant3UI(quadrant) {
 
     if (!quadrant.length) {
         htmlElement += "<p>No task right now</p>";
+        localStorage.removeItem("quadrant3");
     } else {
         quadrant.forEach((task) => {
             htmlElement += `
@@ -136,6 +139,7 @@ function changeQuadrant4UI(quadrant) {
 
     if (!quadrant.length) {
         htmlElement += "<p>No task right now</p>";
+        localStorage.removeItem("quadrant4");
     } else {
         quadrant.forEach((task) => {
             htmlElement += `
@@ -185,6 +189,4 @@ closeAddTask.addEventListener("click", () => {
     changeUI();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    changeUI();
-});
+document.addEventListener("DOMContentLoaded", changeUI);
