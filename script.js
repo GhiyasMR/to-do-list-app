@@ -161,7 +161,7 @@ function handleDelete(event, quadrant, tasks) {
     const button = event.target.closest(".delete-button")
     if (!button) return;
 
-    const id = event.target.dataset.taskId;
+    const id = button.dataset.taskId;
 
     const updatedTask = tasks.filter((task) => task.id !== id);
 
@@ -175,8 +175,8 @@ function handleDelete(event, quadrant, tasks) {
 
 quadrant1.addEventListener("click", (e) => handleDelete(e, "quadrant1", quadrant1Task));
 quadrant2.addEventListener("click", (e) => handleDelete(e, "quadrant2", quadrant2Task));
-quadrant3.addEventListener("click", (e) => handleDelete(e, "quadrant2", quadrant3Task));
-quadrant4.addEventListener("click", (e) => handleDelete(e, "quadrant2", quadrant4Task));
+quadrant3.addEventListener("click", (e) => handleDelete(e, "quadrant3", quadrant3Task));
+quadrant4.addEventListener("click", (e) => handleDelete(e, "quadrant4", quadrant4Task));
 
 addTaskButton.addEventListener("click", addTask);
 showAddTask.addEventListener("click", showOrCloseModal);
