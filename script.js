@@ -17,10 +17,10 @@ const importanceCheckbox = document.getElementById("importance");
 const addTaskButton = document.getElementById("add-task-button");
 
 // QUADRANT TASKS VARIABLE
-const quadrant1Task = JSON.parse(localStorage.getItem("quadrant1")) || [];
-const quadrant2Task = JSON.parse(localStorage.getItem("quadrant2")) || [];
-const quadrant3Task = JSON.parse(localStorage.getItem("quadrant3")) || [];
-const quadrant4Task = JSON.parse(localStorage.getItem("quadrant4")) || [];
+let quadrant1Task = JSON.parse(localStorage.getItem("quadrant1")) || [];
+let quadrant2Task = JSON.parse(localStorage.getItem("quadrant2")) || [];
+let quadrant3Task = JSON.parse(localStorage.getItem("quadrant3")) || [];
+let quadrant4Task = JSON.parse(localStorage.getItem("quadrant4")) || [];
 
 // FUNCTIONS
 function showOrCloseModal() {
@@ -85,7 +85,7 @@ function changeQuadrant1UI(quadrant) {
                 <div class="task" id="task-${task.id}">
                     <input type="checkbox" id="task-check-${task.id}"/>
                     <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
-                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;
         });
@@ -104,7 +104,7 @@ function changeQuadrant2UI(quadrant) {
                 <div class="task" id="task-${task.id}">
                     <input type="checkbox" id="task-check-${task.id}"/>
                     <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
-                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;
         });
@@ -123,7 +123,7 @@ function changeQuadrant3UI(quadrant) {
                 <div class="task" id="task-${task.id}">
                     <input type="checkbox" id="task-check-${task.id}"/>
                     <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
-                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;
         });
@@ -142,7 +142,7 @@ function changeQuadrant4UI(quadrant) {
                 <div class="task" id="task-${task.id}">
                     <input type="checkbox" id="task-check-${task.id}"/>
                     <label for="task-check-${task.id}" class="strikethrough"> ${task.title}</label>
-                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i>D</button>
+                    <button type="button" class="delete-button" data-task-id="${task.id}"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;
         });
@@ -157,6 +157,36 @@ function changeUI() {
     changeQuadrant4UI(quadrant4Task);
 }
 
+function deleteTask() {
+    const deleteButtons = document.querySelectorAll(".delete-button");
+
+    deleteButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            // Delete task from localStorage
+            const id = e.currentTarget.dataset.taskId;
+            const quadrant = e.currentTarget.closest(".quadrant");
+
+            if (quadrant.id === "q1") {
+                quadrant1Task = quadrant1Task.filter((task) => task.id !== id);
+                localStorage.setItem("quadrant1", JSON.stringify(quadrant1Task));
+            } else if (quadrant.id === "q2") {
+                quadrant2Task = quadrant2Task.filter((task) => task.id !== id);
+                localStorage.setItem("quadrant2", JSON.stringify(quadrant2Task));
+            } else if (quadrant.id === "q3") {
+                quadrant3Task = quadrant3Task.filter((task) => task.id !== id);
+                localStorage.setItem("quadrant3", JSON.stringify(quadrant3Task));
+            } else if (quadrant.id === "q4") {
+                quadrant4Task = quadrant4Task.filter((task) => task.id !== id);
+                localStorage.setItem("quadrant4", JSON.stringify(quadrant4Task));
+            }
+
+            // Delete from UI
+            const taskDiv = e.currentTarget.closest(".task");
+            taskDiv.remove();
+        });
+    });
+}
+
 addTaskButton.addEventListener("click", addTask);
 showAddTask.addEventListener("click", showOrCloseModal);
 closeAddTask.addEventListener("click", () => {
@@ -166,4 +196,5 @@ closeAddTask.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     changeUI();
+    deleteTask();
 });
