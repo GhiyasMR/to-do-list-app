@@ -157,29 +157,6 @@ function changeUI() {
     changeQuadrant4UI(quadrant4Task);
 }
 
-function deleteTask() {
-    const deleteButtons = document.querySelectorAll(".delete-button");
-
-    deleteButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const id = e.currentTarget.dataset.taskId;
-            const quadrant = e.target.closest(".quadrant");
-            const taskDiv = e.currentTarget.closest(".task");
-
-            if (quadrant.id === "q1") {
-            } else if (quadrant.id === "q2") {
-                console.log("quadrant 2")
-            } else if (quadrant.id === "q3") {
-                console.log("quadrant 3")
-            } else if (quadrant.id === "q4") {
-                console.log("quadrant 4")
-            }
-
-            taskDiv.remove()
-        })
-    })
-}
-
 addTaskButton.addEventListener("click", addTask);
 showAddTask.addEventListener("click", showOrCloseModal);
 closeAddTask.addEventListener("click", () => {
@@ -189,5 +166,4 @@ closeAddTask.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     changeUI();
-    deleteTask();
 });
